@@ -1,4 +1,5 @@
 import editors from "./editors"
+import colors from "./colors"
 
 // please remove the comments before you PR
 const themes = [
@@ -26,13 +27,8 @@ const themes = [
     //Url to theme resource or marketplace
     url: "",
 
-    /*
-      Colourblind types the theme supports
-      Colourblind options:
-        Protanopia, Deuteranopia, Tritanopia, Monochromatic
-      Descriptions can be found here http://www.colourblindawareness.org/colour-blindness/types-of-colour-blindness/
-    */
-    colors: ["Protanopia"],
+    //Colorblind options taken from colors.js
+    colors: [colors.deuteranopia],
 
     //Editors the theme supports. Editors can be found in editors.js
     editors: [editors.vscode],
@@ -51,7 +47,12 @@ const themes = [
     ],
     repo: "https://github.com/sdras/night-owl-vscode-theme",
     url: "",
-    colors: ["Protanopia", "Deuteranopia", "Triatanopia", "Monochromatic"],
+    colors: [
+      colors.deuteranopia,
+      colors.protanopia,
+      colors.triatanopia,
+      colors.monochromatic,
+    ],
     editors: [editors.vscode],
   },
 ]
