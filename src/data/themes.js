@@ -17,9 +17,7 @@ const themes = [
       Theme Image url
       Images should give a preview of the theme (1 image per environment)
     */
-    images: [
-      "https://cdn.rawgit.com/tinkertrain/panda-syntax-vscode/master/assets/editor.jpg",
-    ],
+    images: ["/images/panda-syntax/editor.jpg"],
 
     //Theme repo url (optional)
     repo: "https://github.com/PandaTheme",
