@@ -20,6 +20,7 @@
     "react-helmet-async": "^1.0.4"
   },
   "devDependencies": {
+    "gatsby-plugin-emoji-favicon": "^1.4.1",
     "prettier": "^1.19.1"
   },
   "keywords": [
