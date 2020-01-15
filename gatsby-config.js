@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `Colorblind Editor Themes`,
+    description: `Helping colorblind developers find accessible editor themes which work best for them. Search for themes for your preferred editors based on your colorblindness`,
+    author: `@dan_spratling`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -18,8 +18,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `colorblind-accessible-editor-themes`,
+        short_name: `colorblind-editors`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
