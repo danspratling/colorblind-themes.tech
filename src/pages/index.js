@@ -1,11 +1,13 @@
 import React from "react"
+import styled from "@emotion/styled"
 import { useStaticQuery, graphql } from "gatsby"
 
 import Layout from "../components/layout"
-import Theme from "../components/theme"
+import EditorTheme from "../components/theme"
 import SEO from "../components/seo"
 
-import themes from "../data/themes"
+import theme from "../utils/theme"
+import editorThemes from "../data/themes"
 
 const IndexPage = () => {
   const {
@@ -30,36 +32,43 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      {themes.map(theme => {
-        const logo = edges.filter(
-          ({ node }) => node.relativePath === theme.logo
-        )[0]
+      <EditorThemeWrapper>
+        {editorThemes.map(editorTheme => {
+          const logo = edges.filter(
+            ({ node }) => node.relativePath === editorTheme.logo
+          )[0]
 
-        return (
-          <Theme
-            key={theme.name}
-            theme={{
-              name: theme.name,
-              description: theme.description,
-              logo: logo.node.childImageSharp,
-              images: theme.images,
-              repo: theme.repo,
-              url: theme.url,
-              colors: theme.colors,
-              editors: theme.editors,
-            }}
-          />
-        )
-      })}
-      {/* <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> */}
+          const images = edges.filter(({ node }) =>
+            editorTheme.images.includes(node.relativePath)
+          )
+
+          return (
+            <EditorTheme
+              key={editorTheme.name}
+              theme={{
+                name: editorTheme.name,
+                description: editorTheme.description,
+                logo: logo.node.childImageSharp,
+                images: images.map(image => image.node.childImageSharp),
+                repo: editorTheme.repo,
+                url: editorTheme.url,
+                colors: editorTheme.colors,
+                editors: editorTheme.editors,
+              }}
+            />
+          )
+        })}
+      </EditorThemeWrapper>
     </Layout>
   )
 }
+
+const EditorThemeWrapper = styled.div`
+  display: grid;
+  grid-gap: 50px;
+  @media (min-width: ${theme.breakpoints[0]}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`
 
 export default IndexPage

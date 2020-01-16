@@ -5,13 +5,7 @@ module.exports = {
     author: `@dan_spratling`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet-async`,
-    {
-      resolve: "gatsby-plugin-emoji-favicon",
-      options: {
-        emoji: "🌈",
-      },
-    },
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -21,6 +15,13 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet-async`,
+    {
+      resolve: "gatsby-plugin-emoji-favicon",
+      options: {
+        emoji: "🌈",
+      },
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
