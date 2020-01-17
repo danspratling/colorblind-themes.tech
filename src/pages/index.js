@@ -20,7 +20,7 @@ const IndexPage = () => {
             relativePath
             childImageSharp {
               fluid {
-                ...GatsbyImageSharpFluid
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
           }
@@ -42,6 +42,10 @@ const IndexPage = () => {
             editorTheme.images.includes(node.relativePath)
           )
 
+          const sortedImages = editorTheme.images
+            .map(image => images.filter(i => i.node.relativePath === image))
+            .flat()
+
           return (
             <EditorTheme
               key={editorTheme.name}
@@ -49,7 +53,7 @@ const IndexPage = () => {
                 name: editorTheme.name,
                 description: editorTheme.description,
                 logo: logo.node.childImageSharp,
-                images: images.map(image => image.node.childImageSharp),
+                images: sortedImages.map(image => image.node.childImageSharp),
                 repo: editorTheme.repo,
                 url: editorTheme.url,
                 colors: editorTheme.colors,
@@ -65,10 +69,8 @@ const IndexPage = () => {
 
 const EditorThemeWrapper = styled.div`
   display: grid;
-  grid-gap: 50px;
-  @media (min-width: ${theme.breakpoints[0]}px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  grid-gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
 `
 
 export default IndexPage

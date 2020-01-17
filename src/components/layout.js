@@ -47,7 +47,7 @@ Layout.propTypes = {
 
 const Container = styled.div`
   margin: 0 auto;
-  max-width: ${theme.breakpoints[1]}px;
+  max-width: ${theme.breakpoints[2]}px;
   padding: 0px 1.0875rem 1.45rem;
 `
 

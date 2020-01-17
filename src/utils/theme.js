@@ -5,5 +5,5 @@ export default {
     background: "#ffffff",
     text: "#000000",
   },
-  breakpoints: [768, 1280],
+  breakpoints: [768, 1140, 1440],
 }
