@@ -2,6 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 
 import Lightbox from "./lightbox"
+import Tabs from "./tabs"
 
 import { external, github } from "../images/icons"
 
@@ -15,23 +16,21 @@ const Theme = ({ theme }) => {
       <EditorThemeContent>
         <p>{name}</p>
         <p>{description}</p>
-        {/* <Image fluid={logo.fluid} alt={`${name} logo`} /> */}
 
-        <ExternalLink href={repo}>
-          <img src={github} alt={`Github repo for ${name}`} />
-        </ExternalLink>
+        <Tabs tabs={colors} color="primary" />
+        <Tabs tabs={editors} color="secondary" />
 
-        {url ? (
-          <ExternalLink href={url}>
-            <img src={external} alt={``} />
+        <IconBox>
+          {url ? (
+            <ExternalLink href={url}>
+              <img src={external} alt={``} />
+            </ExternalLink>
+          ) : null}
+
+          <ExternalLink href={repo}>
+            <img src={github} alt={`Github repo for ${name}`} />
           </ExternalLink>
-        ) : null}
-        {/* {colors.map(color => (
-        <p>{color.name}</p>
-      ))}
-      {editors.map(editor => (
-        <p>{editor.name}</p>
-      ))} */}
+        </IconBox>
       </EditorThemeContent>
     </EditorTheme>
   )
@@ -39,17 +38,26 @@ const Theme = ({ theme }) => {
 
 const EditorTheme = styled.div`
   display: grid;
-  grid-template-rows: 300px auto auto;
-  border: 1px solid #000000;
-  border-radius: 8px;
+  grid-template-rows: 300px 1fr;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 1px 2px 4px hsl(0, 0%, 0%, 20%);
+  overflow: hidden;
 `
 
 const EditorThemeContent = styled.div`
-  padding: 20px;
+  display: grid;
+  grid-template-rows: 38px 80px minmax(40px, auto) minmax(40px, auto) 40px;
+  padding: 15px 20px 15px;
+`
+
+const IconBox = styled.div`
+  text-align: end;
+  margin: auto 0;
 `
 
 const ExternalLink = styled.a`
   display: inline-block;
+  margin: 0 5px;
 `
 
 export default Theme

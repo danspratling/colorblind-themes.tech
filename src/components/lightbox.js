@@ -3,19 +3,13 @@ import Image from "gatsby-image"
 // import { css } from "@emotion/core"
 
 const Lightbox = ({ images }) => {
+  if (!images.length) {
+    return null
+  }
+
   return (
     <>
-      {/* {console.log(images)} */}
-      {/* Lightbox carousel here. */}
-      {images[0] ? (
-        <Image
-          fluid={images[0].fluid}
-          style={{
-            borderRadius: "8px 8px 0px 0px",
-          }}
-        />
-      ) : null}
-      {/* {images[0] ? <Image fixed={images[0].fixed} /> : null} */}
+      <Image fluid={images[0].fluid} />
       {/* {images.map((image, index) => (
         <Image
           fluid={image.fluid}

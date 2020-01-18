@@ -1,9 +1,13 @@
 export default {
   colors: {
-    primary: "#000000",
-    secondary: "#000000",
-    background: "#ffffff",
-    text: "#000000",
+    primary: "hsl(308.3, 75.6%, 46.7%)",
+    secondary: "hsl(128.3, 75.6%, 46.7%)",
+    background: "hsl(308.3, 75.6%, 98%)",
+    text: "hsl(308.3, 75.6%, 5%)",
+  },
+  fonts: {
+    heading: "",
+    body: "Roboto",
   },
   breakpoints: [768, 1140, 1440],
 }
