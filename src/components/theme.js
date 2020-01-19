@@ -7,7 +7,16 @@ import Tabs from "./tabs"
 import { external, github } from "../images/icons"
 
 const Theme = ({ theme }) => {
-  const { name, description, logo, images, repo, url, colors, editors } = theme
+  const {
+    name,
+    description,
+    preview,
+    images,
+    repo,
+    url,
+    colors,
+    editors,
+  } = theme
 
   return (
     <EditorTheme>
