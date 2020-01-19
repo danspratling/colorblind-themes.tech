@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "@emotion/styled"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import Lightbox from "./lightbox"
 import Tabs from "./tabs"
-
-import { external, github } from "../images/icons"
 
 const Theme = ({ theme }) => {
   const {
@@ -32,12 +33,20 @@ const Theme = ({ theme }) => {
         <IconBox>
           {url ? (
             <ExternalLink href={url}>
-              <img src={external} alt={``} />
+              <FontAwesomeIcon
+                icon={faExternalLinkAlt}
+                size="lg"
+                aria-label={`External link to ${name}'s site`}
+              />
             </ExternalLink>
           ) : null}
 
           <ExternalLink href={repo}>
-            <img src={github} alt={`Github repo for ${name}`} />
+            <FontAwesomeIcon
+              icon={faGithub}
+              size="lg"
+              aria-label={`Github repo for ${name}`}
+            />
           </ExternalLink>
         </IconBox>
       </EditorThemeContent>
