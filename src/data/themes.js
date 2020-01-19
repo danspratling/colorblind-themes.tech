@@ -11,9 +11,6 @@ const themes = [
     description:
       "A Visual Studio Code theme for the night owls out there. Fine-tuned for those of us who like to code late into the night.",
 
-    //Theme logo, relative to the theme image folder ('../images/themes'). .svg isn't supported yet, please use .png files
-    logo: "night-owl/logo.png",
-
     /*
       Theme Image url
       Images should give a preview of the theme(s)
@@ -44,19 +41,8 @@ const themes = [
     editors: [editors.vscode],
   },
   {
-    name: "Dracula",
-    description: "A dark theme for many editors, shells, and more",
-    logo: "dracula/dracula.png",
-    images: ["dracula/screenshot.png"],
-    repo: "https://github.com/dracula/",
-    url: "https://draculatheme.com/",
-    colors: [colors.deuteranopia, colors.protanopia],
-    editors: [editors.vscode],
-  },
-  {
     name: "Cobalt2",
     description: "🔥 Official theme by Wes Bos.",
-    logo: "cobalt2/logo.png",
     images: ["cobalt2/preview.png"],
     repo: "https://github.com/wesbos/cobalt2-vscode",
     url: "",
@@ -64,10 +50,18 @@ const themes = [
     editors: [editors.vscode],
   },
   {
+    name: "Dracula",
+    description: "A dark theme for many editors, shells, and more",
+    images: ["dracula/screenshot.png"],
+    repo: "https://github.com/dracula/",
+    url: "https://draculatheme.com/",
+    colors: [colors.deuteranopia, colors.protanopia],
+    editors: [editors.vscode],
+  },
+  {
     name: "Noctis",
     description:
       "Noctis is a collection of light & dark themes with a well balanced blend of warm and cold colors",
-    logo: "noctis/logo.png",
     images: [
       "noctis/noctis.png",
       "noctis/noctisAzureus.png",
@@ -87,7 +81,6 @@ const themes = [
   {
     name: "Panda Theme",
     description: "Panda syntax theme for Editors, IDEs.",
-    logo: "panda-syntax/logo.png",
     images: ["panda-syntax/editor.jpg"],
     repo: "https://github.com/PandaTheme",
     url: "",
