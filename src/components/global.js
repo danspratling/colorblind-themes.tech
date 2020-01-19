@@ -12,7 +12,8 @@ const Global = () => (
       }
       body {
         font-family: ${theme.fonts.body};
-        // line-height: ${theme.lineHeights.body};
+        font-weight: 300;
+        line-height: 1.3;
         letter-spacing: 0.5px;
         margin: 0;
         min-height: 100vh;
@@ -25,21 +26,23 @@ const Global = () => (
       h4,
       h5,
       h6 {
-        // font-family: ${theme.fonts.heading};
+        font-family: ${theme.fonts.heading};
         // font-weight: ${theme.fontWeights.heading};
-        // line-height: ${theme.lineHeights.heading};
+        line-height: 1em;
+        color: ${theme.colors.heading};
+        margin: 0.5em 0 0.8em;
       }
       h1 {
-        // font-size: ${theme.fontSizes[6]};
+        font-size: 2.5em;
       }
       h2 {
-        // font-size: ${theme.fontSizes[5]};
+        font-size: 1.8em;
       }
       h3 {
-        // font-size: ${theme.fontSizes[4]};
+        font-size: 1.4em;
       }
       h4 {
-        // font-size: ${theme.fontSizes[3]};
+        font-size: 1.2em;
       }
       p {
         margin: 0.25em 0 1em;
@@ -55,6 +58,11 @@ const Global = () => (
       a {
         color: ${theme.colors.primary};
         box-shadow: none;
+        transition: 0.2s ease;
+
+        &:hover, &:active {
+          color: ${theme.colors.text};
+        }
       }
       article > * + * {
         margin-top: 1em;

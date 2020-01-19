@@ -23,12 +23,24 @@ module.exports = {
       },
     },
     {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        google: {
+          families: ["Rokkitt", "Roboto:300,400"],
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-prefetch-google-fonts`,
       options: {
         fonts: [
           {
             family: `Roboto`,
-            variants: [`400`, `700`],
+            variants: [`300, 400`],
+          },
+          {
+            family: `Rokkitt`,
+            variants: [`400`],
           },
         ],
       },
