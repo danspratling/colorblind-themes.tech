@@ -21,10 +21,10 @@ const Theme = ({ theme }) => {
 
   return (
     <EditorTheme>
-      <Lightbox images={images} />
+      <Lightbox preview={preview} sources={images} />
 
       <EditorThemeContent>
-        <p>{name}</p>
+        <h3>{name}</h3>
         <p>{description}</p>
 
         <Tabs tabs={colors} color="primary" />
@@ -64,7 +64,7 @@ const EditorTheme = styled.div`
 
 const EditorThemeContent = styled.div`
   display: grid;
-  grid-template-rows: 38px 80px minmax(40px, auto) minmax(40px, auto) 40px;
+  grid-template-rows: 52px 80px minmax(40px, auto) minmax(40px, auto) 40px;
   padding: 15px 20px 15px;
 `
 

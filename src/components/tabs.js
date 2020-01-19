@@ -35,6 +35,7 @@ const Tab = styled.li`
   margin: 0 3px 6px;
   font-size: 0.8rem;
   letter-spacing: 1px;
+  font-weight: 400;
 `
 
 export default Tabs

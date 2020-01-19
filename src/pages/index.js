@@ -6,7 +6,6 @@ import Layout from "../components/layout"
 import EditorTheme from "../components/theme"
 import SEO from "../components/seo"
 
-import theme from "../utils/theme"
 import editorThemes from "../data/themes"
 
 const IndexPage = () => {
@@ -34,10 +33,6 @@ const IndexPage = () => {
       <SEO title="Home" />
       <EditorThemeWrapper>
         {editorThemes.map(editorTheme => {
-          const logo = edges.filter(
-            ({ node }) => node.relativePath === editorTheme.logo
-          )[0]
-
           const images = edges.filter(({ node }) =>
             editorTheme.images.includes(node.relativePath)
           )
@@ -52,8 +47,10 @@ const IndexPage = () => {
               theme={{
                 name: editorTheme.name,
                 description: editorTheme.description,
-                logo: logo.node.childImageSharp,
-                images: sortedImages.map(image => image.node.childImageSharp),
+                preview: sortedImages[0].node.childImageSharp,
+                images: sortedImages.map(
+                  image => image.node.childImageSharp.fluid.src
+                ),
                 repo: editorTheme.repo,
                 url: editorTheme.url,
                 colors: editorTheme.colors,
