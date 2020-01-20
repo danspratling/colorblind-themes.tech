@@ -6,21 +6,31 @@ import Layout from "../components/layout"
 import EditorTheme from "../components/theme"
 import SEO from "../components/seo"
 
-import editorThemes from "../data/themes"
-
 const IndexPage = () => {
   const {
-    allFile: { edges },
+    allTheme: { edges },
   } = useStaticQuery(graphql`
-    query MyQuery {
-      allFile {
+    query myQuery {
+      allTheme {
         edges {
           node {
-            relativePath
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid_withWebp
+            id
+            name
+            description
+            url
+            repo
+            images {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid_withWebp
+                }
               }
+            }
+            colors {
+              name
+            }
+            editors {
+              name
             }
           }
         }
@@ -32,29 +42,16 @@ const IndexPage = () => {
     <Layout>
       <SEO title="Home" />
       <EditorThemeWrapper>
-        {editorThemes.map(editorTheme => {
-          const images = edges.filter(({ node }) =>
-            editorTheme.images.includes(node.relativePath)
-          )
-
-          const sortedImages = editorTheme.images
-            .map(image => images.filter(i => i.node.relativePath === image))
-            .flat()
+        {edges.map(editorTheme => {
+          const { id, images } = editorTheme.node
 
           return (
             <EditorTheme
-              key={editorTheme.name}
+              key={id}
               theme={{
-                name: editorTheme.name,
-                description: editorTheme.description,
-                preview: sortedImages[0].node.childImageSharp,
-                images: sortedImages.map(
-                  image => image.node.childImageSharp.fluid.src
-                ),
-                repo: editorTheme.repo,
-                url: editorTheme.url,
-                colors: editorTheme.colors,
-                editors: editorTheme.editors,
+                ...editorTheme.node,
+                preview: images[0].childImageSharp,
+                images: images.map(image => image.childImageSharp.fluid.src),
               }}
             />
           )

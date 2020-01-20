@@ -4,6 +4,7 @@ module.exports = {
     description: `Helping colorblind developers find accessible editor themes which work best for them. Search for themes for your preferred editors based on your colorblindness`,
     author: `@dan_spratling`,
   },
+  mapping: { "Theme.images": `File.relativePath` },
   plugins: [
     `gatsby-plugin-emotion`,
     {
