@@ -3,32 +3,33 @@ import styled from "@emotion/styled"
 
 import theme from "../utils/theme"
 
-const Tabs = ({ tabs, color }) => {
+const Tags = ({ tags, color, currentTag, useCurrentTag }) => {
   return (
-    <TabList>
-      {tabs.map(({ name }) => (
-        <Tab
-          key={name}
+    <TagList>
+      {tags.map(tag => (
+        <Tag
+          key={tag.name}
           style={{
             background: color ? theme.colors[color] : theme.colors.primary,
             color: color === "primary" ? "white" : "black",
           }}
         >
-          {name}
-        </Tab>
+          {tag.name}
+          {/* <TagCount>{tag.count}</TagCount> */}
+        </Tag>
       ))}
-    </TabList>
+    </TagList>
   )
 }
 
-const TabList = styled.ul`
+const TagList = styled.ul`
   display: block;
   padding: 0;
   margin: 0 -3px 10px;
   text-align: start;
 `
 
-const Tab = styled.li`
+const Tag = styled.li`
   display: inline-block;
   padding: 5px 8px;
   border-radius: 6px;
@@ -38,4 +39,6 @@ const Tab = styled.li`
   font-weight: 400;
 `
 
-export default Tabs
+const TagCount = styled.span``
+
+export default Tags

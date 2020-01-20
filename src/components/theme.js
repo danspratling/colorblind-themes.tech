@@ -5,7 +5,7 @@ import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import Lightbox from "./lightbox"
-import Tabs from "./tabs"
+import Tags from "./tags"
 
 const Theme = ({ theme }) => {
   const {
@@ -27,8 +27,8 @@ const Theme = ({ theme }) => {
         <h3>{name}</h3>
         <p>{description}</p>
 
-        <Tabs tabs={colors} color="primary" />
-        <Tabs tabs={editors} color="secondary" />
+        <Tags tags={colors} color="primary" />
+        <Tags tags={editors} color="secondary" />
 
         <IconBox>
           {url ? (
