@@ -18,8 +18,6 @@ function sourceNodes({ actions, createNodeId, createContentDigest }) {
         },
       }
 
-      console.log({ ...theme })
-
       actions.createNode({ ...theme, ...nodeMeta })
     })
 
