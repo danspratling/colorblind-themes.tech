@@ -41,9 +41,10 @@ const IndexPage = () => {
   // based on context we want to filter out the themes we don't need
   const themes = allTheme.nodes.filter(
     theme =>
-      (currentEditor === "all" || theme.editors.includes(currentEditor)) &&
+      (currentEditor === "all" ||
+        theme.editors.some(editor => editor.name === currentEditor)) &&
       (currentColorblindness === "all" ||
-        theme.colors.includes(currentColorblindness))
+        theme.colors.some(type => type.name === currentColorblindness))
   )
 
   return (

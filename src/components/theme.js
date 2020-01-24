@@ -5,7 +5,26 @@ import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons"
 import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 import Lightbox from "./lightbox"
-import Tags from "./tags"
+
+import theme from "../utils/theme"
+
+const Tags = ({ tags, color }) => {
+  return (
+    <TagList>
+      {tags.map(tag => (
+        <Tag
+          key={tag.name}
+          style={{
+            background: color ? theme.colors[color] : theme.colors.primary,
+            color: color === "primary" ? "white" : "black",
+          }}
+        >
+          {tag.name}
+        </Tag>
+      ))}
+    </TagList>
+  )
+}
 
 const Theme = ({ theme }) => {
   const {
@@ -76,6 +95,23 @@ const IconBox = styled.div`
 const ExternalLink = styled.a`
   display: inline-block;
   margin: 0 5px;
+`
+
+const TagList = styled.ul`
+  display: block;
+  padding: 0;
+  margin: 0 -3px 10px;
+  text-align: start;
+`
+
+const Tag = styled.li`
+  display: inline-block;
+  padding: 5px 8px;
+  border-radius: 6px;
+  margin: 0 3px 6px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  font-weight: 400;
 `
 
 export default Theme
