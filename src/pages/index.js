@@ -1,55 +1,63 @@
-import React from "react"
+import React, { useContext } from "react"
 import styled from "@emotion/styled"
 import { useStaticQuery, graphql } from "gatsby"
+
+import FilterContext from "../context/FilterContext"
 
 import Layout from "../components/layout"
 import EditorTheme from "../components/theme"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-  const {
-    allTheme: { edges },
-  } = useStaticQuery(graphql`
+  const { currentEditor, currentColorblindness } = useContext(FilterContext)
+
+  const { allTheme } = useStaticQuery(graphql`
     query myQuery {
       allTheme {
-        edges {
-          node {
-            id
-            name
-            description
-            url
-            repo
-            images {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid_withWebp
-                }
+        nodes {
+          id
+          name
+          description
+          url
+          repo
+          images {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid_withWebp
               }
             }
-            colors {
-              name
-            }
-            editors {
-              name
-            }
+          }
+          colors {
+            name
+          }
+          editors {
+            name
           }
         }
       }
     }
   `)
 
+  // based on context we want to filter out the themes we don't need
+  const themes = allTheme.nodes.filter(
+    theme =>
+      (currentEditor === "all" || theme.editors.includes(currentEditor)) &&
+      (currentColorblindness === "all" ||
+        theme.colors.includes(currentColorblindness))
+  )
+
   return (
     <Layout>
       <SEO title="Home" />
       <EditorThemeWrapper>
-        {edges.map(editorTheme => {
-          const { id, images } = editorTheme.node
+        {themes.map(editorTheme => {
+          const { id, images } = editorTheme
 
           return (
             <EditorTheme
               key={id}
               theme={{
-                ...editorTheme.node,
+                ...editorTheme,
                 preview: images[0].childImageSharp,
                 images: images.map(image => image.childImageSharp.fluid.src),
               }}
