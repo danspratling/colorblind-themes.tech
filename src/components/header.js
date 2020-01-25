@@ -6,7 +6,7 @@ import FilterContext from "../context/FilterContext"
 
 import TagList from "./taglist"
 
-const Header = ({ siteTitle, editorThemes }) => {
+const Header = ({ siteTitle }) => {
   const {
     editors,
     currentEditor,

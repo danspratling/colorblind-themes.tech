@@ -70,8 +70,7 @@ const Tag = styled.label`
 
   &:focus,
   &:focus-within {
-    outline: 2px solid -webkit-focus-outline-color;
-    outline: 2px solid skyblue;
+    box-shadow: 0 0 4px 3px #cccccc;
   }
 
   input {
