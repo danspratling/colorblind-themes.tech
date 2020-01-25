@@ -29,14 +29,14 @@ const Header = ({ siteTitle, editorThemes }) => {
           tags={editors}
           currentTag={currentEditor}
           setCurrentTag={setCurrentEditor}
-          color="primary"
+          color="secondary"
         />
         <TagList
-          type="Colors"
+          type="Colorblind Types"
           tags={colorblindnessTypes}
           currentTag={currentColorblindness}
           setCurrentTag={setCurrentColorblindness}
-          color="secondary"
+          color="tertiary"
         />
       </HeaderContainer>
     </HeaderWrapper>
@@ -44,7 +44,7 @@ const Header = ({ siteTitle, editorThemes }) => {
 }
 
 const HeaderWrapper = styled.header`
-  margin-bottom: 1.5rem;
+  margin: 3rem 0 1.5rem;
 `
 
 const HeaderContainer = styled.div`
@@ -61,8 +61,9 @@ const Heading = styled.h1`
 `
 
 const SubHeading = styled.h2`
-  font-size: 20px;
+  font-size: 24px;
   text-align: center;
+  margin-bottom: 38px;
 `
 
 export default Header

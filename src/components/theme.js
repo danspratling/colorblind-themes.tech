@@ -46,8 +46,8 @@ const Theme = ({ theme }) => {
         <h3>{name}</h3>
         <p>{description}</p>
 
-        <Tags tags={colors} color="primary" />
-        <Tags tags={editors} color="secondary" />
+        <Tags tags={colors} color="secondary" />
+        <Tags tags={editors} color="tertiary" />
 
         <IconBox>
           {url ? (

@@ -8,44 +8,38 @@ const TagList = ({ type, tags, currentTag, setCurrentTag, color }) => {
       <Tag
         currentTag={"all" === currentTag}
         htmlFor={`filter-all-${type}`}
-        // style={{
-        //   background: color ? theme.colors[color] : theme.colors.primary,
-        //   color: color === "primary" ? "white" : "black",
-        // }}
+        color={color ? theme.colors[color] : theme.colors.primary}
         clickable
       >
         <input
           type="radio"
-          name="tag"
+          name={`tag-${type}`}
           id={`filter-all-${type}`}
           value="all"
           checked={"all" === currentTag}
           onChange={e => setCurrentTag(e.currentTarget.value)}
         />
-        All
-        <TagCount>{tags.length}</TagCount>
+        {`All ${type}`}
+        {/* <TagCount>{tags.length}</TagCount> */}
       </Tag>
       {tags.map(tag => (
         <Tag
           key={tag.name}
           currentTag={tag.name === currentTag}
           htmlFor={`filter-${tag.name}`}
-          // style={{
-          //   background: color ? theme.colors[color] : theme.colors.primary,
-          //   color: color === "primary" ? "white" : "black",
-          // }}
+          color={color ? theme.colors[color] : theme.colors.primary}
           clickable
         >
           <input
             type="radio"
-            name="tag"
+            name={`tag-${type}`}
             id={`filter-${tag.name}`}
             value={tag.name}
             checked={tag.name === currentTag}
             onChange={e => setCurrentTag(e.currentTarget.value)}
           />
           {tag.name}
-          <TagCount>{tag.count}</TagCount>
+          {/* <TagCount>{tag.count}</TagCount> */}
         </Tag>
       ))}
     </Tags>
@@ -56,7 +50,7 @@ const Tags = styled.ul`
   display: block;
   padding: 0;
   margin: 0 -3px 10px;
-  text-align: start;
+  text-align: center;
 `
 
 const Tag = styled.label`
@@ -66,19 +60,51 @@ const Tag = styled.label`
   margin: 0 5px 8px;
   font-size: 0.8rem;
   letter-spacing: 1px;
-  font-weight: 400;
-  input {
-    display: none;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #303331;
+  border: 2px solid #303331;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+
+  &:focus,
+  &:focus-within {
+    outline: 2px solid -webkit-focus-outline-color;
+    outline: 2px solid skyblue;
   }
-  background-color: ${theme.colors.primary};
-  ${props =>
-    props.currentTag &&
-    `
-    background-color: ${theme.colors.secondary};
-    color: hsla(0, 100%, 0%, 0.8);
-  `}
+
+  input {
+    opacity: 0;
+    position: absolute;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: transparent;
+    border-color: #303331;
+    color: black;
+  }
+
+  &,
+  &:hover,
+  &:focus {
+    ${props =>
+      props.currentTag &&
+      `
+          background: ${props.color};
+          border-color: ${props.color};
+          color: ${props.color === theme.colors.primary ? "white" : "black"}
+        `}
+  }
 `
 
-const TagCount = styled.span``
+// const TagCount = styled.span`
+//   background-color: #303331;
+//   color: white;
+//   font-size: 12px;
+//   padding: 2px 4px;
+//   border-radius: 0.25em;
+// `
 
 export default TagList
