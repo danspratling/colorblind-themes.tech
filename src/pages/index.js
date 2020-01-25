@@ -73,7 +73,7 @@ const IndexPage = () => {
 const EditorThemeWrapper = styled.div`
   display: grid;
   grid-gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 `
 
 export default IndexPage
