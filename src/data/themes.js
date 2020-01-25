@@ -78,15 +78,6 @@ const themes = [
     colors: [colors.deuteranopia],
     editors: [editors.vscode],
   },
-  {
-    name: "Panda Theme",
-    description: "Panda syntax theme for Editors, IDEs.",
-    images: ["panda-syntax/editor.jpg"],
-    repo: "https://github.com/PandaTheme",
-    url: "",
-    colors: [colors.deuteranopia, colors.protanopia],
-    editors: [editors.vscode],
-  },
 ]
 
 export default themes
