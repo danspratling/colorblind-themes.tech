@@ -1,10 +1,10 @@
 # Find your theme → [colorblind-themes.tech](https://colorblind-themes.tech)
 
-Search through a list of editor themes, curated for colourblind users, to find the one that perfectly matches your needs.
+Search through a list of themes, curated for colourblind users, to find the one that perfectly matches your needs.
 
 Add your own preferred theme in [data/themes.js](https://github.com/danspratling/colorblind-themes.tech/blob/master/src/data/themes.js).
 
-Add any missing editors in [data/editors.js](https://github.com/danspratling/colorblind-themes.tech/blob/master/src/data/editors.js).
+Add any missing environments in [data/environments.js](https://github.com/danspratling/colorblind-themes.tech/blob/master/src/data/environments.js).
 
 ---
 

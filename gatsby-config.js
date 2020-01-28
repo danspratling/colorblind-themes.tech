@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: `Colorblind Editor Themes`,
-    description: `Helping colorblind developers find accessible editor themes which work best for them. Search for themes for your preferred editors based on your colorblindness`,
+    title: `Colorblind Environment Themes`,
+    description: `Helping colorblind developers find accessible environment themes which work best for them. Search for themes for your preferred programming environments based on your colorblindness`,
     author: `@dan_spratling`,
   },
   mapping: { "Theme.images": `File.relativePath` },
@@ -49,8 +49,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `colorblind-accessible-editor-themes`,
-        short_name: `colorblind-editors`,
+        name: `colorblind-accessible-environment-themes`,
+        short_name: `colorblind-environments`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,

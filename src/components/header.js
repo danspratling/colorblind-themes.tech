@@ -8,9 +8,9 @@ import TagList from "./taglist"
 
 const Header = ({ siteTitle }) => {
   const {
-    editors,
-    currentEditor,
-    setCurrentEditor,
+    environments,
+    currentEnvironment,
+    setCurrentEnvironment,
     colorblindnessTypes,
     currentColorblindness,
     setCurrentColorblindness,
@@ -21,21 +21,21 @@ const Header = ({ siteTitle }) => {
       <HeaderContainer>
         <Heading>{siteTitle}</Heading>
         <SubHeading>
-          A site to help you discover more editor themes which suit your
+          A site to help you discover more environment themes which suit your
           colorblind needs.
         </SubHeading>
-        <TagList
-          type="Editors"
-          tags={editors}
-          currentTag={currentEditor}
-          setCurrentTag={setCurrentEditor}
-          color="secondary"
-        />
         <TagList
           type="Colorblind Types"
           tags={colorblindnessTypes}
           currentTag={currentColorblindness}
           setCurrentTag={setCurrentColorblindness}
+          color="secondary"
+        />
+        <TagList
+          type="Environments"
+          tags={environments}
+          currentTag={currentEnvironment}
+          setCurrentTag={setCurrentEnvironment}
           color="tertiary"
         />
       </HeaderContainer>

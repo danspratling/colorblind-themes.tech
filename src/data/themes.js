@@ -1,4 +1,4 @@
-import editors from "./editors"
+import environments from "./environments"
 import colors from "./colors"
 
 // please remove the comments before you PR
@@ -37,8 +37,21 @@ const themes = [
       colors.monochromatic,
     ],
 
-    //Editors the theme supports. Editors can be found in editors.js. Minimum 1
-    editors: [editors.vscode],
+    //environments the theme supports. environments can be found in environments.js. Minimum 1
+    environments: [
+      environments.vscode,
+      environments.atom,
+      environments.intelliJIDEA,
+      environments.webstorm,
+      environments.hyper,
+      environments.iTerm2,
+      environments.pygments,
+      environments.vim,
+      environments.visualstudio2019,
+      environments.alfred,
+      environments.emacs,
+      environments.slack,
+    ],
   },
   {
     name: "Cobalt2",
@@ -47,16 +60,39 @@ const themes = [
     repo: "https://github.com/wesbos/cobalt2-vscode",
     url: "",
     colors: [colors.deuteranopia],
-    editors: [editors.vscode],
+    environments: [
+      environments.vscode,
+      environments.sublimeText,
+      environments.atom,
+      environments.iTerm2,
+      environments.hyper,
+      environments.alfred,
+      environments.slack,
+    ],
   },
   {
     name: "Dracula",
-    description: "A dark theme for many editors, shells, and more",
+    description: "A dark theme for many environments, shells, and more",
     images: ["dracula/screenshot.png"],
     repo: "https://github.com/dracula/",
     url: "https://draculatheme.com/",
     colors: [colors.deuteranopia, colors.protanopia],
-    editors: [editors.vscode],
+    environments: [
+      environments.vscode,
+      environments.notepadPlusPlus,
+      environments.vim,
+      environments.sublimeText,
+      environments.xcode,
+      environments.atom,
+      environments.emacs,
+      environments.intelliJIDEA,
+      environments.visualstudio2019,
+      environments.iTerm2,
+      environments.hyper,
+      environments.pygments,
+      environments.slack,
+      environments.alfred,
+    ],
   },
   {
     name: "Noctis",
@@ -76,7 +112,7 @@ const themes = [
     repo: "https://github.com/liviuschera/noctis",
     url: "",
     colors: [colors.deuteranopia],
-    editors: [editors.vscode],
+    environments: [environments.vscode],
   },
 ]
 

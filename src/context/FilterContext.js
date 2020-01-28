@@ -4,17 +4,21 @@ import { useStaticQuery, graphql } from "gatsby"
 const FilterContext = createContext(undefined)
 
 const FilterProvider = ({ children }) => {
-  const [currentEditor, setCurrentEditor] = useState("all")
+  const [currentEnvironment, setCurrentEnvironment] = useState("all")
   const [currentColorblindness, setCurrentColorblindness] = useState("all")
 
-  const { allTheme, allEditor, allColorblindnessType } = useStaticQuery(graphql`
+  const {
+    allTheme,
+    allEnvironment,
+    allColorblindnessType,
+  } = useStaticQuery(graphql`
     query FilterQuery {
       allTheme {
         nodes {
           name
         }
       }
-      allEditor {
+      allEnvironment {
         nodes {
           name
         }
@@ -31,9 +35,9 @@ const FilterProvider = ({ children }) => {
     <FilterContext.Provider
       value={{
         themes: allTheme.nodes,
-        editors: allEditor.nodes,
-        currentEditor,
-        setCurrentEditor,
+        environments: allEnvironment.nodes,
+        currentEnvironment,
+        setCurrentEnvironment,
         colorblindnessTypes: allColorblindnessType.nodes,
         currentColorblindness,
         setCurrentColorblindness,

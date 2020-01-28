@@ -1,6 +1,6 @@
 import themes from "./src/data/themes"
 import colors from "./src/data/colors"
-import editors from "./src/data/editors"
+import environments from "./src/data/environments"
 
 function sourceNodes({ actions, createNodeId, createContentDigest }) {
   themes
@@ -37,22 +37,22 @@ function sourceNodes({ actions, createNodeId, createContentDigest }) {
     actions.createNode({ ...colors[key], ...nodeMeta })
   })
 
-  Object.keys(editors)
-    .sort(key => editors[key].name) //sort isn't working
+  Object.keys(environments)
+    .sort(key => environments[key].name) //sort isn't working
     .forEach(key => {
       const nodeMeta = {
-        id: createNodeId(`editor-${editors[key].name}`),
+        id: createNodeId(`environment-${environments[key].name}`),
         parent: null,
         children: [],
         internal: {
-          type: `Editor`,
+          type: `Environment`,
           mediaType: `text/html`,
-          content: JSON.stringify(editors[key]),
-          contentDigest: createContentDigest(editors[key]),
+          content: JSON.stringify(environments[key]),
+          contentDigest: createContentDigest(environments[key]),
         },
       }
 
-      actions.createNode({ ...editors[key], ...nodeMeta })
+      actions.createNode({ ...environments[key], ...nodeMeta })
     })
 }
 

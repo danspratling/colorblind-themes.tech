@@ -35,19 +35,19 @@ const Theme = ({ theme }) => {
     repo,
     url,
     colors,
-    editors,
+    environments,
   } = theme
 
   return (
-    <EditorTheme>
+    <EnvTheme>
       <Lightbox preview={preview} sources={images} />
 
-      <EditorThemeContent>
+      <EnvThemeContent>
         <h3>{name}</h3>
         <p>{description}</p>
 
         <Tags tags={colors} color="secondary" />
-        <Tags tags={editors} color="tertiary" />
+        <Tags tags={environments} color="tertiary" />
 
         <IconBox>
           {url ? (
@@ -68,12 +68,12 @@ const Theme = ({ theme }) => {
             />
           </ExternalLink>
         </IconBox>
-      </EditorThemeContent>
-    </EditorTheme>
+      </EnvThemeContent>
+    </EnvTheme>
   )
 }
 
-const EditorTheme = styled.div`
+const EnvTheme = styled.div`
   display: grid;
   grid-template-rows: 300px 1fr;
   border-radius: 0 0 8px 8px;
@@ -81,7 +81,7 @@ const EditorTheme = styled.div`
   overflow: hidden;
 `
 
-const EditorThemeContent = styled.div`
+const EnvThemeContent = styled.div`
   display: grid;
   grid-template-rows: 52px 80px minmax(40px, auto) minmax(40px, auto) 40px;
   padding: 15px 20px 15px;
