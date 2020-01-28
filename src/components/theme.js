@@ -38,6 +38,23 @@ const Theme = ({ theme }) => {
     environments,
   } = theme
 
+  let sortedEnvironments = Object.keys(environments)
+    .sort((a, b) => {
+      const envA = environments[a].name
+      const envB = environments[b].name
+
+      if (envA.toLowerCase() > envB.toLowerCase()) {
+        return 1
+      }
+
+      if (envB.toLowerCase() > envA.toLowerCase()) {
+        return -1
+      }
+
+      return 0
+    })
+    .map(key => environments[key])
+
   return (
     <EnvTheme>
       <Lightbox preview={preview} sources={images} />
@@ -47,7 +64,7 @@ const Theme = ({ theme }) => {
         <p>{description}</p>
 
         <Tags tags={colors} color="secondary" />
-        <Tags tags={environments} color="tertiary" />
+        <Tags tags={sortedEnvironments} color="tertiary" />
 
         <IconBox>
           {url ? (

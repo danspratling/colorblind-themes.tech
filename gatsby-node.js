@@ -38,7 +38,20 @@ function sourceNodes({ actions, createNodeId, createContentDigest }) {
   })
 
   Object.keys(environments)
-    .sort(key => environments[key].name) //sort isn't working
+    .sort((a, b) => {
+      const envA = environments[a].name
+      const envB = environments[b].name
+
+      if (envA.toLowerCase() > envB.toLowerCase()) {
+        return 1
+      }
+
+      if (envB.toLowerCase() > envA.toLowerCase()) {
+        return -1
+      }
+
+      return 0
+    })
     .forEach(key => {
       const nodeMeta = {
         id: createNodeId(`environment-${environments[key].name}`),
