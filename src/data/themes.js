@@ -78,6 +78,20 @@ const themes = [
     colors: [colors.deuteranopia],
     editors: [editors.vscode],
   },
+  {
+    name: "Solarized",
+    description:
+      "Based on the built-in solarized theme, the dark and light solarized themes have been improved to look more like solarized (vim)",
+    images: [
+      "solarized/dark-full.png",
+      "solarized/light-full.png",
+    ],
+    repo: "https://github.com/ryanolsonx/vscode-solarized-theme",
+    url: "",
+    colors: [colors.deuteranopia],
+    editors: [editors.vscode],
+  },
+  
 ]
 
 export default themes
