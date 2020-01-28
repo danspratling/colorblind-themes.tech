@@ -112,6 +112,15 @@ const themes = [
     colors: [colors.deuteranopia],
     environments: [environments.vscode],
   },
+  {
+    name: `VSCode Material Theme`,
+    description: `The official community maintained Material Theme with "legacy" color schemes you love!`,
+    images: [`material/material.png`],
+    repo: `https://github.com/equinusocio/vsc-material-theme/`,
+    url: `https://material-theme.site/`,
+    colors: [colors.deuteranopia],
+    environments: [environments.vscode],
+  },
 ]
 
 export default themes
