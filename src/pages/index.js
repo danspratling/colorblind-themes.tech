@@ -5,11 +5,13 @@ import { useStaticQuery, graphql } from "gatsby"
 import FilterContext from "../context/FilterContext"
 
 import Layout from "../components/layout"
-import EditorTheme from "../components/theme"
+import EnvTheme from "../components/theme"
 import SEO from "../components/seo"
 
 const IndexPage = () => {
-  const { currentEditor, currentColorblindness } = useContext(FilterContext)
+  const { currentEnvironment, currentColorblindness } = useContext(
+    FilterContext
+  )
 
   const { allTheme } = useStaticQuery(graphql`
     query myQuery {
@@ -30,7 +32,7 @@ const IndexPage = () => {
           colors {
             name
           }
-          editors {
+          environments {
             name
           }
         }
@@ -41,8 +43,10 @@ const IndexPage = () => {
   // based on context we want to filter out the themes we don't need
   const themes = allTheme.nodes.filter(
     theme =>
-      (currentEditor === "all" ||
-        theme.editors.some(editor => editor.name === currentEditor)) &&
+      (currentEnvironment === "all" ||
+        theme.environments.some(
+          environment => environment.name === currentEnvironment
+        )) &&
       (currentColorblindness === "all" ||
         theme.colors.some(type => type.name === currentColorblindness))
   )
@@ -50,27 +54,27 @@ const IndexPage = () => {
   return (
     <Layout>
       <SEO title="Home" />
-      <EditorThemeWrapper>
-        {themes.map(editorTheme => {
-          const { id, images } = editorTheme
+      <EnvThemeWrapper>
+        {themes.map(theme => {
+          const { id, images } = theme
 
           return (
-            <EditorTheme
+            <EnvTheme
               key={id}
               theme={{
-                ...editorTheme,
+                ...theme,
                 preview: images[0].childImageSharp,
                 images: images.map(image => image.childImageSharp.fluid.src),
               }}
             />
           )
         })}
-      </EditorThemeWrapper>
+      </EnvThemeWrapper>
     </Layout>
   )
 }
 
-const EditorThemeWrapper = styled.div`
+const EnvThemeWrapper = styled.div`
   display: grid;
   grid-gap: 25px;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
