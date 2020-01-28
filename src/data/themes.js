@@ -5,29 +5,28 @@ import colors from "./colors"
 const themes = [
   {
     //Theme name
-    name: "Night Owl/Light Owl",
+    name: `Night Owl/Light Owl`,
 
     //Theme description
-    description:
-      "A Visual Studio Code theme for the night owls out there. Fine-tuned for those of us who like to code late into the night.",
+    description: `A Visual Studio Code theme for the night owls out there. Fine-tuned for those of us who like to code late into the night.`,
 
     /*
       Theme Image url
       Images should give a preview of the theme(s)
-      Image urls should be relative to the theme image folder ("../images/themes")
+      Image urls should be relative to the theme image folder (`../images/themes`)
     */
     images: [
-      "night-owl/first-screen.jpg",
-      "night-owl/three-dark.jpg",
-      "night-owl/light-owl-full.jpg",
-      "night-owl/three-light.jpg",
+      `night-owl/first-screen.jpg`,
+      `night-owl/three-dark.jpg`,
+      `night-owl/light-owl-full.jpg`,
+      `night-owl/three-light.jpg`,
     ],
 
     //Theme repo url - if possible add the repo which
-    repo: "https://github.com/sdras/night-owl-vscode-theme",
+    repo: `https://github.com/sdras/night-owl-vscode-theme`,
 
     //Url to theme resource, such as a custom site (optional)
-    url: "",
+    url: ``,
 
     //Colorblind options taken from colors.js. Minimum 1
     colors: [
@@ -54,11 +53,11 @@ const themes = [
     ],
   },
   {
-    name: "Cobalt2",
-    description: "🔥 Official theme by Wes Bos.",
-    images: ["cobalt2/preview.png"],
-    repo: "https://github.com/wesbos/cobalt2-vscode",
-    url: "",
+    name: `Cobalt2`,
+    description: `🔥 Official theme by Wes Bos.`,
+    images: [`cobalt2/preview.png`],
+    repo: `https://github.com/wesbos/cobalt2-vscode`,
+    url: ``,
     colors: [colors.deuteranopia],
     environments: [
       environments.vscode,
@@ -71,11 +70,11 @@ const themes = [
     ],
   },
   {
-    name: "Dracula",
-    description: "A dark theme for many environments, shells, and more",
-    images: ["dracula/screenshot.png"],
-    repo: "https://github.com/dracula/",
-    url: "https://draculatheme.com/",
+    name: `Dracula`,
+    description: `A dark theme for many environments, shells, and more`,
+    images: [`dracula/screenshot.png`],
+    repo: `https://github.com/dracula/`,
+    url: `https://draculatheme.com/`,
     colors: [colors.deuteranopia, colors.protanopia],
     environments: [
       environments.vscode,
@@ -95,22 +94,21 @@ const themes = [
     ],
   },
   {
-    name: "Noctis",
-    description:
-      "Noctis is a collection of light & dark themes with a well balanced blend of warm and cold colors",
+    name: `Noctis`,
+    description: `Noctis is a collection of light & dark themes with a well balanced blend of warm and cold colors`,
     images: [
-      "noctis/noctis.png",
-      "noctis/noctisAzureus.png",
-      "noctis/noctisBordo.png",
-      "noctis/noctisHibernus.png",
-      "noctis/noctisLilac.png",
-      "noctis/noctisLux.png",
-      "noctis/noctisMinimus.png",
-      "noctis/noctisUva.png",
-      "noctis/noctisViola.png",
+      `noctis/noctis.png`,
+      `noctis/noctisAzureus.png`,
+      `noctis/noctisBordo.png`,
+      `noctis/noctisHibernus.png`,
+      `noctis/noctisLilac.png`,
+      `noctis/noctisLux.png`,
+      `noctis/noctisMinimus.png`,
+      `noctis/noctisUva.png`,
+      `noctis/noctisViola.png`,
     ],
-    repo: "https://github.com/liviuschera/noctis",
-    url: "",
+    repo: `https://github.com/liviuschera/noctis`,
+    url: ``,
     colors: [colors.deuteranopia],
     environments: [environments.vscode],
   },
