@@ -115,7 +115,7 @@ const themes = [
   {
     name: `VSCode Material Theme`,
     description: `A free minimalist theme for Visual Studio Code & more inspired by Material Design System.`,
-    images: [`material/material.png`],
+    images: [`material/material.jpg`],
     repo: `https://github.com/equinusocio/vsc-material-theme/`,
     url: `https://material-theme.site/`,
     colors: [colors.deuteranopia],
