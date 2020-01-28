@@ -119,7 +119,7 @@ const themes = [
     repo: `https://github.com/ryanolsonx/vscode-solarized-theme`,
     url: ``,
     colors: [colors.deuteranopia],
-    editors: [editors.vscode],
+    environments: [environments.vscode],
   },
 ]
 
