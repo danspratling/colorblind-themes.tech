@@ -113,6 +113,15 @@ const themes = [
     environments: [environments.vscode],
   },
   {
+    name: `Solarized`,
+    description: `Based on the built-in solarized theme, the dark and light solarized themes have been improved to look more like solarized (vim)`,
+    images: [`solarized/dark-full.png`, `solarized/light-full.png`],
+    repo: `https://github.com/ryanolsonx/vscode-solarized-theme`,
+    url: ``,
+    colors: [colors.deuteranopia],
+    environments: [environments.vscode],
+  },
+  {
     name: `VSCode Material Theme`,
     description: `A free minimalist theme for Visual Studio Code & more inspired by Material Design System.`,
     images: [`material/material.jpg`],
