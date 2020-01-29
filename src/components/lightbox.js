@@ -15,7 +15,10 @@ const Lightbox = ({ preview, sources }) => {
 
   return (
     <>
-      <Button onClick={() => setToggler(!toggler)}>
+      <Button
+        onClick={() => setToggler(!toggler)}
+        aria-label="View more images"
+      >
         <Image
           fluid={preview.fluid}
           css={css`

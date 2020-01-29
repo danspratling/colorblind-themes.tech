@@ -12,15 +12,17 @@ const Tags = ({ tags, color }) => {
   return (
     <TagList>
       {tags.map(tag => (
-        <Tag
-          key={tag.name}
-          style={{
-            background: color ? theme.colors[color] : theme.colors.primary,
-            color: color === "primary" ? "white" : "black",
-          }}
-        >
-          {tag.name}
-        </Tag>
+        <TagListItem>
+          <Tag
+            key={tag.name}
+            style={{
+              background: color ? theme.colors[color] : theme.colors.primary,
+              color: color === "primary" ? "white" : "black",
+            }}
+          >
+            {tag.name}
+          </Tag>
+        </TagListItem>
       ))}
     </TagList>
   )
@@ -68,12 +70,8 @@ const Theme = ({ theme }) => {
 
         <IconBox>
           {url ? (
-            <ExternalLink href={url}>
-              <FontAwesomeIcon
-                icon={faExternalLinkAlt}
-                size="lg"
-                aria-label={`External link to ${name}'s site`}
-              />
+            <ExternalLink href={url} alt={`External link to ${name}'s site`}>
+              <FontAwesomeIcon icon={faExternalLinkAlt} size="lg" />
             </ExternalLink>
           ) : null}
 
@@ -119,6 +117,10 @@ const TagList = styled.ul`
   padding: 0;
   margin: 0 -3px 10px;
   text-align: start;
+`
+
+const TagListItem = styled.li`
+  display: inline-block;
 `
 
 const Tag = styled.li`

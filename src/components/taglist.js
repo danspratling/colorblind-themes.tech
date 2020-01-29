@@ -2,55 +2,63 @@ import React from "react"
 import styled from "@emotion/styled"
 import theme from "../utils/theme"
 
-const TagList = ({ type, tags, currentTag, setCurrentTag, color }) => {
+const Tags = ({ type, tags, currentTag, setCurrentTag, color }) => {
   return (
-    <Tags>
-      <Tag
-        currentTag={"all" === currentTag}
-        htmlFor={`filter-all-${type}`}
-        color={color ? theme.colors[color] : theme.colors.primary}
-        clickable
-      >
-        <input
-          type="radio"
-          name={`tag-${type}`}
-          id={`filter-all-${type}`}
-          value="all"
-          checked={"all" === currentTag}
-          onChange={e => setCurrentTag(e.currentTarget.value)}
-        />
-        {`All ${type}`}
-        {/* <TagCount>{tags.length}</TagCount> */}
-      </Tag>
-      {tags.map(tag => (
+    <TagList>
+      <TagListItem>
         <Tag
-          key={tag.name}
-          currentTag={tag.name === currentTag}
-          htmlFor={`filter-${tag.name}`}
+          currentTag={"all" === currentTag}
+          htmlFor={`filter-all-${type}`}
           color={color ? theme.colors[color] : theme.colors.primary}
           clickable
         >
           <input
             type="radio"
             name={`tag-${type}`}
-            id={`filter-${tag.name}`}
-            value={tag.name}
-            checked={tag.name === currentTag}
+            id={`filter-all-${type}`}
+            value="all"
+            checked={"all" === currentTag}
             onChange={e => setCurrentTag(e.currentTarget.value)}
           />
-          {tag.name}
-          {/* <TagCount>{tag.count}</TagCount> */}
+          {`All ${type}`}
+          {/* <TagCount>{tags.length}</TagCount> */}
         </Tag>
+      </TagListItem>
+      {tags.map(tag => (
+        <TagListItem>
+          <Tag
+            key={tag.name}
+            currentTag={tag.name === currentTag}
+            htmlFor={`filter-${tag.name}`}
+            color={color ? theme.colors[color] : theme.colors.primary}
+            clickable
+          >
+            <input
+              type="radio"
+              name={`tag-${type}`}
+              id={`filter-${tag.name}`}
+              value={tag.name}
+              checked={tag.name === currentTag}
+              onChange={e => setCurrentTag(e.currentTarget.value)}
+            />
+            {tag.name}
+            {/* <TagCount>{tag.count}</TagCount> */}
+          </Tag>
+        </TagListItem>
       ))}
-    </Tags>
+    </TagList>
   )
 }
 
-const Tags = styled.ul`
+const TagList = styled.ul`
   display: block;
   padding: 0;
   margin: 0 -3px 10px;
   text-align: center;
+`
+
+const TagListItem = styled.li`
+  display: inline-block;
 `
 
 const Tag = styled.label`
@@ -106,4 +114,4 @@ const Tag = styled.label`
 //   border-radius: 0.25em;
 // `
 
-export default TagList
+export default Tags
