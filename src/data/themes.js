@@ -50,6 +50,7 @@ const themes = [
       environments.alfred,
       environments.emacs,
       environments.slack,
+      environments.tape,
     ],
   },
   {
@@ -119,7 +120,10 @@ const themes = [
     repo: `https://github.com/ryanolsonx/vscode-solarized-theme`,
     url: ``,
     colors: [colors.deuteranopia],
-    environments: [environments.vscode],
+    environments: [
+      environments.vscode,
+      environments.tape,
+    ],
   },
   {
     name: `VSCode Material Theme`,
@@ -130,6 +134,40 @@ const themes = [
     colors: [colors.deuteranopia],
     environments: [environments.vscode],
   },
+  {
+    name: `Tol Bright/Light/Muted `,
+    description: `A theme for Tape based on colour blind friendly qualitative colour schemes by Paul Tol`,
+    images: [
+      `tol/tol_bright.png`,
+      `tol/tol_light.png`,
+      `tol/tol_muted.png`,
+    ],
+    repo: `https://github.com/aeriform-io/themes`,
+    url: ``,
+    colors: [
+      colors.deuteranopia,
+      colors.protanopia,
+      colors.triatanopia,
+    ],
+    environments: [
+      environments.tape,
+    ],
+  },
+  {
+    name: `Okabe Ito`,
+    description: `A theme for Tape based on colour blind friendly qualitative colour schemes by Masataka Okabe and Kei Ito`,
+    images: [`okabeito/okabeito.png`],
+    repo: `https://github.com/aeriform-io/themes`,
+    url: ``,
+    colors: [
+      colors.deuteranopia,
+      colors.protanopia,
+      colors.triatanopia,
+    ],
+    environments: [
+      environments.tape,
+    ],
+  }
 ]
 
 export default themes

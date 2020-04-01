@@ -56,6 +56,10 @@ const environments = {
     name: "Sublime Text",
     url: "https://www.sublimetext.com/",
   },
+  tape: {
+    name: "Tape",
+    url: "https://aeriform.io/",
+  },
   notepadPlusPlus: {
     name: "Notepad++",
     url: "https://notepad-plus-plus.org/",
