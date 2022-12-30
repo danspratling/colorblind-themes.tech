@@ -14,7 +14,7 @@
     "@rhysforyou/gatsby-plugin-react-helmet-async": "^0.1.3",
     "esm": "^3.2.25",
     "fslightbox-react": "^1.4.7",
-    "gatsby": "^2.19.8",
+    "gatsby": "^2.32.13",
     "gatsby-image": "^2.2.34",
     "gatsby-plugin-emotion": "^4.1.21",
     "gatsby-plugin-manifest": "^2.2.39",
